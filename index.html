@@ -109,11 +109,18 @@ header .category-nav{flex:0 0 100%;max-width:none;display:flex;flex-wrap:nowrap;
   .category-nav a[href="#acuatica-infantil"]{background:#2445e9;color:#fff}
   .category-nav a[href="#acuatica"]{background:#a8e4ee;color:#162458}
   .category-nav a[href="#minidisco"]{background:#e3b5fa;color:#30204c}
+  .category-nav a:not(.gallery-link):not(.contact-link){display:inline-flex;flex-direction:column;align-items:flex-start;gap:2px;line-height:1.15}
+  .category-nav a{font-size:16px;padding:10px 16px}
+  .category-nav .category-age{font-size:13px;font-weight:normal;opacity:.8}
   .category-nav a.gallery-link{background:#fff;color:#24366b;border:1px solid #c7d0e8}
   header .category-nav a.contact-link{display:block;background:#234bdb;color:#fff;border-color:#234bdb}
   html{scroll-padding-top:170px}
   #animaciones .service-card{scroll-margin-top:0}
   .category-toggle{display:none}
+  @media(min-width:701px) and (max-width:1200px){
+    html{scroll-padding-top:230px}
+    header .category-nav{flex-wrap:wrap;justify-content:center;overflow:visible}
+  }
   @media(max-width:700px){
     html{scroll-padding-top:130px}
     header{width:calc(100% - 16px);max-width:none;left:8px;right:8px;overflow:visible}
@@ -124,6 +131,8 @@ header .category-nav{flex:0 0 100%;max-width:none;display:flex;flex-wrap:nowrap;
     .category-nav.is-open .category-toggle::after{content:'▴'}
     header .category-nav a{display:none!important;width:100%;margin:0!important;padding:7px 12px!important}
     header .category-nav.is-open a{display:block!important}
+    header .category-nav.is-open a:not(.gallery-link):not(.contact-link){flex-direction:row;align-items:center;justify-content:space-between;gap:12px}
+    .category-nav .category-age{font-size:11px}
     .category-nav a[href="#recreativa-infantil"]{background:#ffe16c!important;color:#18234b!important}
     .category-nav a[href="#recreativa"]{background:#f4aed1!important;color:#352044!important}
     .category-nav a[href="#acuatica-infantil"]{background:#2445e9!important;color:#fff!important}
@@ -162,7 +171,7 @@ header .category-nav{flex:0 0 100%;max-width:none;display:flex;flex-wrap:nowrap;
   </style><style id="remove-scroll-brand">.hero:after{content:none!important;display:none!important}</style></head>
 <body>
 <a class="skip" href="#inicio">Ir al contenido</a>
-<header><a class="brand" href="#inicio" aria-label="Animaciones Castillo, inicio"><img class="brand-logo" src="media/logo-castillo.jpg" alt="" width="64" height="64"><span class="brand-name"><small>Animaciones</small>Castillo</span></a><nav aria-label="Navegación principal"><a class="services-link" href="#animaciones">Las animaciones</a><a class="gallery-link" href="#galeria">Fotos y videos</a><a class="pill contact-link" href="#contacto">Consultar fecha</a></nav><nav class="category-nav" aria-label="Categorías de fiestas"><a href="#recreativa-infantil">Recreativa infantil</a><a href="#recreativa">Recreativa</a><a href="#acuatica-infantil">Acuática infantil</a><a href="#acuatica">Acuática</a><a href="#minidisco">Minidisco</a></nav></header>
+<header><a class="brand" href="#inicio" aria-label="Animaciones Castillo, inicio"><img class="brand-logo" src="media/logo-castillo.jpg" alt="" width="64" height="64"><span class="brand-name"><small>Animaciones</small>Castillo</span></a><nav aria-label="Navegación principal"><a class="services-link" href="#animaciones">Las animaciones</a><a class="gallery-link" href="#galeria">Fotos y videos</a><a class="pill contact-link" href="#contacto">Consultar fecha</a></nav><nav class="category-nav" aria-label="Categorías de fiestas"><a href="#recreativa-infantil"><span>Recreativa infantil</span><small class="category-age">2 a 5 años</small></a><a href="#recreativa"><span>Recreativa</span><small class="category-age">6 a 11 años</small></a><a href="#acuatica-infantil"><span>Acuática infantil</span><small class="category-age">3 a 5 años</small></a><a href="#acuatica"><span>Acuática</span><small class="category-age">6 a 13 años</small></a><a href="#minidisco"><span>Minidisco</span><small class="category-age">8 a 13 años</small></a></nav></header>
 <main id="inicio">
 <div class="hero-journey"><section class="hero" aria-labelledby="titulo"><div><span class="eyebrow">Fiestas infantiles · 2 a 13 años</span><h1 id="titulo">Pequeños invitados.<br><em>Grandes<br>momentos.</em></h1><p class="intro">Animaciones infantiles a domicilio, a cargo de profesores de Educación Física. Para chicos y chicas de 2 a 13 años.</p><a class="button" href="https://wa.me/5491124008362?text=Hola%2C%20quisiera%20consultar%20por%20una%20animaci%C3%B3n%20infantil." target="_blank" rel="noopener noreferrer">Consultá por WhatsApp <span aria-hidden="true">↗</span></a><p class="caption">WhatsApp · +54 9 11 2400-8362</p><a class="scroll-invite" href="#animaciones"><span aria-hidden="true">↓</span>Conocé nuestras propuestas</a></div><figure class="hero-art"><img src="castillo-hero.png" width="1536" height="1024" alt="Castillo de juguete rodeado de globos y confeti de colores"></figure></section></div>
 <div class="ribbon" aria-label="Información de las animaciones"><div><span class="fact-label">Edades</span><strong>De 2 a 13 años</strong></div><div><span class="fact-label">Zona de cobertura</span><strong>CABA y Buenos Aires</strong></div><div><span class="fact-label">Equipo</span><strong>Profes de Educación Física</strong></div></div>
@@ -247,7 +256,7 @@ document.addEventListener('DOMContentLoaded',()=>{
   const toggle=document.createElement('button');
   toggle.type='button';
   toggle.className='category-toggle';
-  toggle.textContent='Ver animaciones';
+  toggle.textContent='Elegí tu fiesta';
   toggle.setAttribute('aria-expanded','false');
   row.prepend(toggle);
   function closeMenu(){
