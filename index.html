@@ -110,8 +110,12 @@ header .category-nav{flex:0 0 100%;max-width:none;display:flex;flex-wrap:nowrap;
   .category-nav a[href="#acuatica"]{background:#a8e4ee;color:#162458}
   .category-nav a[href="#minidisco"]{background:#e3b5fa;color:#30204c}
   .category-nav a.gallery-link{background:#fff;color:#24366b;border:1px solid #c7d0e8}
+  header .category-nav a.contact-link{display:block;background:#234bdb;color:#fff;border-color:#234bdb}
+  html{scroll-padding-top:170px}
+  #animaciones .service-card{scroll-margin-top:0}
   .category-toggle{display:none}
   @media(max-width:700px){
+    html{scroll-padding-top:130px}
     header{width:calc(100% - 16px);max-width:none;left:8px;right:8px;overflow:visible}
     header .category-nav{display:flex;flex-direction:column;align-items:stretch;gap:4px;max-width:100%;overflow:visible}
     header .category-nav::before{display:none!important}
@@ -144,17 +148,21 @@ header .category-nav{flex:0 0 100%;max-width:none;display:flex;flex-wrap:nowrap;
     .service-card{max-width:100%;overflow:hidden}
     .service-card h3{overflow-wrap:anywhere}
     .service-photo-stage{max-width:100%}
-    #animaciones .cards{position:relative}
-    #animaciones .service-card{position:sticky!important;top:118px!important;min-height:calc(100svh - 150px)!important;margin-bottom:28px;justify-content:center}
-    #animaciones .service-card:nth-child(2){top:126px!important}
-    #animaciones .service-card:nth-child(3){top:134px!important}
-    #animaciones .service-card:nth-child(4){top:142px!important}
-    #animaciones .service-card:nth-child(5){top:150px!important}
+    #animaciones .cards{position:static}
+    #animaciones .service-card{position:relative!important;top:auto!important;height:auto!important;min-height:0!important;margin-bottom:24px;justify-content:flex-start}
+    #animaciones .disco-service{gap:16px}
+    #animaciones .service-card{padding:20px 18px}
+    #animaciones .service-card .service-meta{margin-bottom:14px}
+    #animaciones .service-card h3{font-size:clamp(30px,8.5vw,34px);line-height:1.08;margin:0 0 12px}
+    #animaciones .service-card p{font-size:16px;line-height:1.45}
+    #animaciones .service-card .service-extra{margin-top:12px;font-size:14px!important}
+    #animaciones .service-card .service-link{margin-top:14px;font-size:14px}
+    #animaciones .service-photo-stage{height:250px}
   }
   </style><style id="remove-scroll-brand">.hero:after{content:none!important;display:none!important}</style></head>
 <body>
 <a class="skip" href="#inicio">Ir al contenido</a>
-<header><a class="brand" href="#inicio" aria-label="Animaciones Castillo, inicio"><img class="brand-logo" src="media/logo-castillo.jpg" alt="" width="64" height="64"><span class="brand-name"><small>Animaciones</small>Castillo</span></a><nav aria-label="Navegación principal"><a class="services-link" href="#animaciones">Las animaciones</a><a class="gallery-link" href="#galeria">Fotos y videos</a><a class="pill" href="#contacto">Consultar fecha</a></nav><nav class="category-nav" aria-label="Categorías de fiestas"><a href="#recreativa-infantil">Recreativa infantil</a><a href="#recreativa">Recreativa</a><a href="#acuatica-infantil">Acuática infantil</a><a href="#acuatica">Acuática</a><a href="#minidisco">Minidisco</a></nav></header>
+<header><a class="brand" href="#inicio" aria-label="Animaciones Castillo, inicio"><img class="brand-logo" src="media/logo-castillo.jpg" alt="" width="64" height="64"><span class="brand-name"><small>Animaciones</small>Castillo</span></a><nav aria-label="Navegación principal"><a class="services-link" href="#animaciones">Las animaciones</a><a class="gallery-link" href="#galeria">Fotos y videos</a><a class="pill contact-link" href="#contacto">Consultar fecha</a></nav><nav class="category-nav" aria-label="Categorías de fiestas"><a href="#recreativa-infantil">Recreativa infantil</a><a href="#recreativa">Recreativa</a><a href="#acuatica-infantil">Acuática infantil</a><a href="#acuatica">Acuática</a><a href="#minidisco">Minidisco</a></nav></header>
 <main id="inicio">
 <div class="hero-journey"><section class="hero" aria-labelledby="titulo"><div><span class="eyebrow">Fiestas infantiles · 2 a 13 años</span><h1 id="titulo">Pequeños invitados.<br><em>Grandes<br>momentos.</em></h1><p class="intro">Animaciones infantiles a domicilio, a cargo de profesores de Educación Física. Para chicos y chicas de 2 a 13 años.</p><a class="button" href="https://wa.me/5491124008362?text=Hola%2C%20quisiera%20consultar%20por%20una%20animaci%C3%B3n%20infantil." target="_blank" rel="noopener noreferrer">Consultá por WhatsApp <span aria-hidden="true">↗</span></a><p class="caption">WhatsApp · +54 9 11 2400-8362</p><a class="scroll-invite" href="#animaciones"><span aria-hidden="true">↓</span>Conocé nuestras propuestas</a></div><figure class="hero-art"><img src="castillo-hero.png" width="1536" height="1024" alt="Castillo de juguete rodeado de globos y confeti de colores"></figure></section></div>
 <div class="ribbon" aria-label="Información de las animaciones"><div><span class="fact-label">Edades</span><strong>De 2 a 13 años</strong></div><div><span class="fact-label">Zona de cobertura</span><strong>CABA y Buenos Aires</strong></div><div><span class="fact-label">Equipo</span><strong>Profes de Educación Física</strong></div></div>
@@ -225,7 +233,44 @@ restart();
  show();
 });
 })();
-</script><script id="move-gallery-nav">document.addEventListener('DOMContentLoaded',()=>{const row=document.querySelector('.category-nav'),gallery=document.querySelector('.gallery-link');if(!row)return;if(gallery)row.appendChild(gallery);const toggle=document.createElement('button');toggle.type='button';toggle.className='category-toggle';toggle.textContent='Ver categorías';toggle.setAttribute('aria-expanded','false');row.prepend(toggle);toggle.addEventListener('click',()=>{const open=row.classList.toggle('is-open');toggle.setAttribute('aria-expanded',String(open))});document.addEventListener('click',e=>{if(!row.contains(e.target)){row.classList.remove('is-open');toggle.setAttribute('aria-expanded','false')}})})</script></body></html>
-
-
-
+</script><script id="move-gallery-nav">
+document.addEventListener('DOMContentLoaded',()=>{
+  const row=document.querySelector('.category-nav');
+  const gallery=document.querySelector('.gallery-link');
+  const contact=document.querySelector('.pill');
+  if(!row)return;
+  if(gallery)row.appendChild(gallery);
+  if(contact)row.appendChild(contact);
+  const primary=document.querySelector('header>nav[aria-label="Navegación principal"]');
+  if(primary&&[...primary.querySelectorAll('a')].every(link=>getComputedStyle(link).display==='none'))primary.remove();
+  row.setAttribute('aria-label','Navegación de propuestas, galería y contacto');
+  const toggle=document.createElement('button');
+  toggle.type='button';
+  toggle.className='category-toggle';
+  toggle.textContent='Ver animaciones';
+  toggle.setAttribute('aria-expanded','false');
+  row.prepend(toggle);
+  function closeMenu(){
+    row.classList.remove('is-open');
+    toggle.setAttribute('aria-expanded','false');
+  }
+  toggle.addEventListener('click',()=>{
+    const open=row.classList.toggle('is-open');
+    toggle.setAttribute('aria-expanded',String(open));
+  });
+  row.addEventListener('click',event=>{
+    if(event.target.closest('a'))closeMenu();
+  });
+  document.addEventListener('click',event=>{
+    if(!row.contains(event.target))closeMenu();
+  });
+  document.addEventListener('keydown',event=>{
+    if(event.key==='Escape'&&row.classList.contains('is-open')){
+      closeMenu();
+      toggle.focus();
+    }
+  });
+  document.addEventListener('wheel',closeMenu,{passive:true});
+  document.addEventListener('touchmove',closeMenu,{passive:true});
+});
+</script></body></html>
