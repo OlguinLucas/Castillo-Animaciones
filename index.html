@@ -171,14 +171,21 @@ header .category-nav{flex:0 0 100%;max-width:none;display:flex;flex-wrap:nowrap;
     .service-photo-stage{max-width:100%}
     #animaciones .cards{position:static}
     #animaciones .service-card{position:relative!important;top:auto!important;height:auto!important;min-height:0!important;margin-bottom:24px;justify-content:flex-start}
-    #animaciones .disco-service{gap:16px}
-    #animaciones .service-card{padding:22px 20px}
-    #animaciones .service-card .service-meta{margin-bottom:14px}
-    #animaciones .service-card h3{font-size:clamp(34px,9.5vw,38px);line-height:1.08;margin:0 0 12px}
-    #animaciones .service-card p{font-size:17px;line-height:1.5}
-    #animaciones .service-card .service-extra{margin-top:12px;font-size:15px!important}
-    #animaciones .service-card .service-link{margin-top:14px;font-size:15px}
-    #animaciones .service-photo-stage{height:290px}
+    #animaciones .disco-service{gap:14px}
+    #animaciones .disco-copy{display:contents}
+    #animaciones .service-card{padding:18px 16px}
+    #animaciones .service-card .service-meta{margin-bottom:10px}
+    #animaciones .service-card .service-meta{order:1}
+    #animaciones .service-card h3{order:2}
+    #animaciones .service-card .service-carousel,
+    #animaciones .service-card .disco-photo{order:3}
+    #animaciones .service-card p{order:4}
+    #animaciones .service-card .service-link{order:5}
+    #animaciones .service-card h3{font-size:clamp(32px,8.5vw,36px);line-height:1.08;margin:0 0 10px}
+    #animaciones .service-card p{font-size:16px;line-height:1.45}
+    #animaciones .service-card .service-extra{margin-top:10px;font-size:14px!important}
+    #animaciones .service-card .service-link{margin-top:12px;padding:9px 13px;border-radius:30px;background:#2445e9;color:#fff;font-size:14px;text-decoration:none}
+    #animaciones .service-photo-stage{height:190px;border-radius:16px}
   }
   @media(max-width:700px) and (prefers-reduced-motion:no-preference){
     .hero-art{transform:translateY(calc(var(--scene,0)*-5vh)) rotate(calc(6deg - var(--scene,0)*10deg))!important}
